@@ -84,7 +84,7 @@ class Notification extends Message
         return $this;
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         $jsonData = $this->getJsonData();
         if ($this->title) {
@@ -110,7 +110,7 @@ class Notification extends Message
         }
         if ($this->content_available) {
             $jsonData['content_available'] = $this->content_available;
-        }        
+        }
         return $jsonData;
     }
 }
